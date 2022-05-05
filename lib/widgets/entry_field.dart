@@ -18,7 +18,7 @@ class CustomEntryField extends StatelessWidget {
     return Container(
       // container styling
       color: Colors.grey.shade200,
-      padding: const EdgeInsets.symmetric(vertical: 15),
+      margin: const EdgeInsets.symmetric(vertical: 15),
       // set border attributes
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
