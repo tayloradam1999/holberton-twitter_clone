@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:twitter/screens/signup_screen.dart';
+import 'package:twitter/screens/forgot_password_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'dart:convert';
 // Stateful Widget SignIn
 
 class SignIn extends StatefulWidget {
@@ -14,23 +15,23 @@ class SignIn extends StatefulWidget {
 }
 
 class SignInState extends State<SignIn> {
-  late TextEditingController emailController; // cannot start with underscore
-  late TextEditingController passwordController; // cannot start with underscore
+  late TextEditingController _emailController;
+  late TextEditingController _passwordController;
 
   @override
   void initState() {
     // init state
     super.initState();
     // set controllers
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
   }
 
   @override
   void dispose() {
     // dispose controllers
-    emailController.dispose();
-    passwordController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
     // dispose state
     super.dispose();
   }
@@ -62,11 +63,11 @@ class SignInState extends State<SignIn> {
               // set children as 2 entry fields and a flat button
               CustomEntryField(
                 hint: 'Enter email',
-                controller: emailController,
+                controller: _emailController,
               ),
               CustomEntryField(
                 hint: 'Enter password',
-                controller: passwordController,
+                controller: _passwordController,
               ),
               CustomFlatButton(
                 label: 'Submit',
@@ -78,12 +79,12 @@ class SignInState extends State<SignIn> {
                 child: TextButton(
                   // navigates to SignUp screen
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => SignUp(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUp(),
+                      ),
+                    );
                   },
                   child: Text(
                     'Sign Up',
@@ -99,7 +100,15 @@ class SignInState extends State<SignIn> {
               Container(
                 margin: const EdgeInsets.all(15),
                 child: TextButton(
-                  onPressed: () {},
+                  // navigates to ForgotPassword screen
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotPassword(),
+                      ),
+                    );
+                  },
                   child: Text(
                     'Forgot Password',
                     style: TextStyle(
