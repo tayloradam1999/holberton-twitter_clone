@@ -17,27 +17,33 @@ class CustomEntryField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // container styling
-      color: Colors.grey.shade200,
-      margin: const EdgeInsets.symmetric(vertical: 15),
-      // set border attributes
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        border: Border.all(
-          color: Colors.blue,
-        ),
-      ),
-      // set textfield attributes
+      margin: const EdgeInsets.all(15),
       child: TextField(
         controller: controller,
         obscureText: isPassword,
+        keyboardType:
+            isPassword ? TextInputType.visiblePassword : TextInputType.text,
         decoration: InputDecoration(
           hintText: hint,
-          border: InputBorder.none,
-          // set hint text styling
-          hintStyle: const TextStyle(
-            color: Colors.grey,
+          hintStyle: TextStyle(
+            color: Colors.grey.shade400,
             fontSize: 18,
           ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+            borderSide: BorderSide(
+              color: Colors.grey.shade400,
+              width: 2,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+            borderSide: BorderSide(
+              color: Theme.of(context).primaryColor,
+              width: 2,
+            ),
+          ),
+          contentPadding: const EdgeInsets.all(20),
         ),
       ),
     );

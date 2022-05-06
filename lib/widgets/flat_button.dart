@@ -15,20 +15,24 @@ class CustomFlatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // container styling
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: Theme.of(context).primaryColor,
-        // background color
-      ),
-      // set FlatButton attributes
-      // ignore: deprecated_member_use
-      child: FlatButton(
-        // onPressed: onPressed, // no functionality yet, error thrown
+      margin: const EdgeInsets.all(15),
+      child: ElevatedButton(
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+          ),
+          padding: MaterialStateProperty.all<EdgeInsets>(
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          ),
+          minimumSize: MaterialStateProperty.all<Size>(
+            const Size.fromHeight(50),
+          ),
+          foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+          overlayColor: MaterialStateProperty.all<Color>(Colors.blue.shade800),
+        ),
         onPressed: () {},
-        focusColor: Theme.of(context).primaryColorDark, // no Overlay color
-        hoverColor: Theme.of(context).primaryColorDark, // no Overlay color
-        splashColor: Theme.of(context).primaryColorDark, // no Overlay color
         child: Text(
           label,
           style: TextStyle(
