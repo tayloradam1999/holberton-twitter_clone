@@ -56,7 +56,7 @@ class SignUpState extends State<SignUp> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Sign In',
+          'Sign Up',
           style: TextStyle(
             color: const Color.fromARGB(255, 0, 0, 0),
             fontFamily: GoogleFonts.mulish().fontFamily,
