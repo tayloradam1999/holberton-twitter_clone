@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomFlatButton extends StatelessWidget {
   final String label;
-  final Function onPressed;
+  Function onPressed;
 
-  const CustomFlatButton({
+  CustomFlatButton({
     Key? key,
     required this.label,
     required this.onPressed,

@@ -10,3 +10,4 @@ A (static) replica of the [Twitter](https://twitter.com) App made with [Flutter]
 
 ## Forgot Password
 ![ForgotPassword](https://github.com/tayloradam1999/static_twitter_clone/blob/master/readme_assets/Screenshot_20220506-182556.jpg)
+
