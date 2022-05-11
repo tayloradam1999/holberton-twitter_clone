@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:twitter/screens/chats_screen.dart';
+import 'package:twitter/screens/chat_screen.dart';
 import 'package:twitter/screens/notifications_screen.dart';
 import 'package:twitter/screens/search_screen.dart';
 import '../screens/home_screen.dart';
-import 'package:twitter/providers/app_state.dart';
 
 class BottomMenuBar extends StatefulWidget {
-  BottomMenuBar({Key? key}) : super(key: key);
+  const BottomMenuBar({Key? key}) : super(key: key);
 
   @override
   State<BottomMenuBar> createState() => _BottomMenuBarState();
@@ -23,10 +22,10 @@ class _BottomMenuBarState extends State<BottomMenuBar> {
   ];
 
   final List<String> _titles = [
-    'Home',
-    'Search',
-    'Notifications',
-    'Messages',
+    'home',
+    'search',
+    'notifications',
+    'mail',
   ];
 
   _buildIcon(int index) {
@@ -35,6 +34,24 @@ class _BottomMenuBarState extends State<BottomMenuBar> {
         setState(() {
           _selectedIndex = index;
         });
+        switch (index) {
+          case 0:
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()));
+            break;
+          case 1:
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SearchScreen()));
+            break;
+          case 2:
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NotificationsScreen()));
+            break;
+          case 3:
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ChatScreen()));
+            break;
+        }
       },
       child: SizedBox(
         height: 60.0,
@@ -60,50 +77,10 @@ class _BottomMenuBarState extends State<BottomMenuBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
-                    ),
-                  );
-                  AppState().setpageIndex = 0;
-                },
-                child: _buildIcon(0)),
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SearchScreen(),
-                    ),
-                  );
-                  AppState().setpageIndex = 1;
-                },
-                child: _buildIcon(1)),
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => NotificationsScreen(),
-                    ),
-                  );
-                  AppState().setpageIndex = 2;
-                },
-                child: _buildIcon(2)),
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ChatScreen(),
-                    ),
-                  );
-                  AppState().setpageIndex = 3;
-                },
-                child: _buildIcon(3)),
+            _buildIcon(0),
+            _buildIcon(1),
+            _buildIcon(2),
+            _buildIcon(3),
           ],
         ),
       ),
