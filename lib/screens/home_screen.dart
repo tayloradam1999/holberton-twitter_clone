@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitter/widgets/side_bar_menu.dart';
+import 'package:twitter/widgets/bottom_bar_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 // Stateful Widget HomeScreen
 
@@ -12,6 +13,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  // PageController
+
   @override
   void initState() {
     // init state
@@ -43,6 +46,7 @@ class HomeScreenState extends State<HomeScreen> {
         bottomOpacity: 0.0,
         elevation: 0.0,
       ),
+      bottomNavigationBar: BottomMenuBar(),
     );
   }
 }
