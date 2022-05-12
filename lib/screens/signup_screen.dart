@@ -13,11 +13,10 @@ class SignUp extends StatefulWidget {
 }
 
 class SignUpState extends State<SignUp> {
-  late TextEditingController _nameController; // cannot start with underscore
-  late TextEditingController _emailController; // cannot start with underscore
-  late TextEditingController
-      _passwordController; // cannot start with underscore
-  late TextEditingController _confirmController; // cannot start with underscore
+  late TextEditingController _nameController;
+  late TextEditingController _emailController;
+  late TextEditingController _passwordController;
+  late TextEditingController _confirmController;
   late GlobalKey<FormState> _formKey;
 
   @override
