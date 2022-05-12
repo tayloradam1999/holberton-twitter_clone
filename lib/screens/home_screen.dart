@@ -47,7 +47,6 @@ class HomeScreenState extends State<HomeScreen> {
       ),
       body: ListView(
         children: const [
-          SizedBox(height: 20),
           PostWidget(),
           PostWidget(),
           PostWidget(),
