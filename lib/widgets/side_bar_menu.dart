@@ -40,7 +40,7 @@ class SideBarMenuState extends State<SideBarMenu> {
                     CircleAvatar(
                       radius: 30,
                       backgroundImage: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgSmojUgwjIB87c4Q0hLCAyl__oiTySWGWJUZtUNHlHjBALLzTsu_vMHYMaEwLts4QEoo&usqp=CAU'),
+                          'https://www.woolha.com/media/2020/03/flutter-circleavatar-minradius-maxradius.jpg'),
                       backgroundColor: Colors.transparent,
                     ),
                   ],
