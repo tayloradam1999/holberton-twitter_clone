@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitter/widgets/side_bar_menu.dart';
+import 'package:twitter/widgets/post_widget.dart';
 import 'package:twitter/widgets/bottom_bar_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 // Stateful Widget HomeScreen
@@ -36,17 +37,25 @@ class HomeScreenState extends State<HomeScreen> {
         title: Text(
           'Home',
           style: TextStyle(
-            color: const Color.fromARGB(255, 0, 0, 0),
+            color: Colors.white,
             fontFamily: GoogleFonts.mulish().fontFamily,
             fontWeight: FontWeight.w800,
             fontSize: 22,
           ),
         ),
-        backgroundColor: Colors.transparent,
-        bottomOpacity: 0.0,
-        elevation: 0.0,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
-      bottomNavigationBar: BottomMenuBar(),
+      body: ListView(
+        children: const [
+          SizedBox(height: 20),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+        ],
+      ),
+      bottomNavigationBar: const BottomMenuBar(),
     );
   }
 }
