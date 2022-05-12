@@ -9,7 +9,7 @@ A static clone of the [Twitter](https://twitter.com) App made with [Flutter](htt
 ![SignUp](https://github.com/tayloradam1999/holberton-twitter_clone/blob/master/lib/assets/signup.jpg?raw=true)
 
 ## Forgot Password
-![ForgotPassword](https://github.com/tayloradam1999/static_twitter_clone/blob/master/readme_assets/forgotpassword.jpg)
+![ForgotPassword](https://github.com/tayloradam1999/holberton-twitter_clone/blob/master/lib/assets/forgotpassword.jpg?raw=true)
 
 ## Home
 ![Home](https://github.com/tayloradam1999/holberton-twitter_clone/blob/master/lib/assets/home.jpg?raw=true)
